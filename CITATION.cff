@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this academic project, please cite it as below."
+title: "Spanish Electricity Demand Forecasting with a Heterogeneous Ensemble"
+type: software
+authors:
+  - family-names: Bustamante
+    given-names: Didac
+  - family-names: Castaño
+    given-names: Nil
+  - family-names: Causton
+    given-names: Taiki
+  - family-names: Garcia Almenara
+    given-names: Joan
+version: 0.1.0
+date-released: 2026-11-09
+
