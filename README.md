@@ -47,19 +47,19 @@ The data are divided chronologically to avoid using future observations to predi
 
 | Model | Test RMSE (MWh) | Test MAE (MWh) | Test MAPE | Test R² |
 |---|---:|---:|---:|---:|
-| Optimised ensemble | **528.18** | 351.34 | 1.22% | **0.9868** |
-| Random forest | 531.58 | **348.36** | **1.20%** | 0.9867 |
-| XGBoost | 545.38 | 372.42 | 1.29% | 0.9860 |
-| Gradient boosting | 577.27 | 402.52 | 1.39% | 0.9843 |
-| Heuristic ensemble | 608.13 | 419.73 | 1.45% | 0.9825 |
-| MLP | 711.96 | 512.90 | 1.81% | 0.9761 |
-| Simple-average ensemble | 938.63 | 696.89 | 2.31% | 0.9584 |
-| Ridge regression | 1,018.70 | 761.93 | 2.64% | 0.9510 |
-| KNN | 2,093.54 | 1,504.66 | 5.27% | 0.7930 |
-| Seasonal naive (t−24) | 3,590.51 | 2,520.34 | 8.75% | 0.3912 |
-| Linear SVR | 4,020.96 | 3,412.31 | 10.99% | 0.2365 |
+| Optimised ensemble | **531.84** | **319.71** | **1.12%** | **0.9866** |
+| XGBoost | 534.88 | 329.86 | 1.17% | 0.9865 |
+| Random forest | 542.09 | 327.97 | 1.15% | 0.9861 |
+| Gradient boosting | 590.29 | 383.38 | 1.35% | 0.9835 |
+| Heuristic ensemble | 621.51 | 406.81 | 1.41% | 0.9818 |
+| MLP | 724.80 | 493.41 | 1.75% | 0.9752 |
+| Simple-average ensemble | 975.85 | 725.40 | 2.40% | 0.9550 |
+| Ridge regression | 1,013.10 | 749.36 | 2.56% | 0.9515 |
+| KNN | 2,047.98 | 1,457.51 | 5.07% | 0.8020 |
+| Seasonal naive (t−24) | 3,588.55 | 2,519.00 | 8.74% | 0.3920 |
+| Linear SVR | 4,170.71 | 3,553.37 | 11.48% | 0.1787 |
 
-The ensemble produced the lowest test RMSE, although its improvement over random forest was modest. This should therefore be interpreted as an incremental forecasting gain rather than evidence that ensembling always dominates a strong individual learner. Random forest achieved slightly better MAE and MAPE, illustrating that the preferred model depends on the operational loss function.
+The optimised ensemble achieved the best result across all four reported test metrics. Its RMSE improvement over XGBoost—the strongest individual model by RMSE—was modest, so the result should be interpreted as an incremental forecasting gain rather than evidence that ensembling always dominates a strong individual learner.
 
 ![Test RMSE comparison](reports/figures/fig7_rmse_comparison.png)
 
@@ -95,13 +95,15 @@ jupyter lab
 
 Open `notebooks/electricity_demand_forecasting.ipynb` and run the cells from top to bottom. The notebook expects both CSV files in `data/raw/`.
 
+The complete notebook was re-executed from a clean copy on 10 November 2026 using Python 3.13 and the pinned dependencies in `requirements.txt`. All 45 code cells completed without errors, and the resulting metrics and figures were used to update this repository.
+
 ## Limitations
 
 - The analysis covers a single country and historical period.
 - Weather observations from five cities may not fully represent national conditions.
 - Hyperparameter selection is constrained by the computational scope of a course project.
 - Performance should be reassessed on more recent data and under rolling-origin validation.
-- The ensemble's gain over random forest is small and may not persist in a different period.
+- The ensemble's gain over XGBoost is small and may not persist in a different period.
 
 ## Team and attribution
 
