@@ -101,7 +101,7 @@ Open `notebooks/electricity_demand_forecasting.ipynb` and run the cells from top
 - Weather observations from five cities may not fully represent national conditions.
 - Hyperparameter selection is constrained by the computational scope of a course project.
 - Performance should be reassessed on more recent data and under rolling-origin validation.
-- The ensemble's gain over XGBoost is small and may not persist in a different period.
+- The ensemble's gain over random forest is small and may not persist in a different period.
 
 ## Team and attribution
 
